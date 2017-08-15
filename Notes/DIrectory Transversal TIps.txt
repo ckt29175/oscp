@@ -1,0 +1,7 @@
+Use directory short notation such as:
+ls ../../../Docume~1/
+for "Documents and Settings"
+
+https://support.microsoft.com/en-us/help/142982/how-windows-generates-8-3-file-names-from-long-file-names
+
+first six letters and then '~1'

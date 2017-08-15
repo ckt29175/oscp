@@ -1,0 +1,10 @@
+netdiscover -r 10.11.1.0/24
+
+for ip in $(seq 0 255); do host 192.168.1.$ip done
+
+Port scanning:
+unicorn
+us -mT -Iv ip:a -r 3000 -R 3 && us -mU -Iv ip:a -r 3000 -R 3
+
+nmap -p- -T4 -A -v $ip
+
