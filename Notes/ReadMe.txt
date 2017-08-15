@@ -1,0 +1,1 @@
+These are notes for me for OSCP exam. Updating and sloppy

@@ -1,0 +1,20 @@
+load auto_add_route
+
+load alias
+
+alias del rm
+alias handler use exploit/multi/handler
+alias so show options
+alias se show evasion
+alias sa show advanced
+alias si show info
+
+load sounds
+
+setg TimestampOutput true
+setg VERBOSE true
+
+setg ExitOnSession false
+
+setg LHOST 0.0.0.0
+setg LPORT 4443
