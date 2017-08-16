@@ -1,0 +1,5 @@
+ | grep "/dos/" - no dos exploits
+-t - search title only
+| grep -vi '\.php[^$]  ' |- remove ending .php titles
+--colour - remove color (Add this with removing ending .php titles to correctly grep)
+| grep -vi '/dos/\|\.php[^$]'  - grep all together
