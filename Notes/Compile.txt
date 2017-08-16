@@ -8,7 +8,7 @@ chmod (file) 	- 	change file perms to be able to execute
 
 
 Mingw:
- i686-w64-mingw32- gcc(g++) exploit.c -o exploit -lws2_32(-lws2_32 is winsock)
+ i686-w64-mingw32- gcc(g++) exploit.c -o exploit -lws2_32
 
 in case mingw32 does not support the code such as "__try" , compile in a windows vm:
 Visual Studio Developer Command Line  (Developer Command Prompt for VS )
