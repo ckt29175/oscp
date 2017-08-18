@@ -8,3 +8,8 @@ us -mT -Iv ip:a -r 3000 -R 3 && us -mU -Iv ip:a -r 3000 -R 3
 
 nmap -p- -T4 -A -v $ip
 
+root@kali:~# gobuster -u http://10.11.1.71/ \ -w /usr/share/seclists/Discovery/Web_Content/common.txt \ -s '200,204,301,302,307,403,500' -e  
+
+
+Brute force CGI:
+root@kali:~# gobuster -u http://10.11.1.71/ \ -w /usr/share/seclists/Discovery/Web_Content/cgis.txt \ -s '200,204,301,302,307,403,500' -e  
