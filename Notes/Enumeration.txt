@@ -1,6 +1,8 @@
 netdiscover -r 10.11.1.0/24
 
-for ip in $(seq 0 255); do host 192.168.1.$ip done
+Brute force domain names:
+for ip in $(seq 0 255); do host 192.168.1.$ip; done
+root@kali:~# for ip in $(seq 0 255); do host 10.11.1.$ip 10.11.1.220 |grep "domain name pointer" ; done 
 
 Port scanning:
 unicorn
@@ -8,8 +10,10 @@ us -mT -Iv ip:a -r 3000 -R 3 && us -mU -Iv ip:a -r 3000 -R 3
 
 nmap -p- -T4 -A -v $ip
 
+Brute force web directory:
 root@kali:~# gobuster -u http://10.11.1.71/ \ -w /usr/share/seclists/Discovery/Web_Content/common.txt \ -s '200,204,301,302,307,403,500' -e  
-
 
 Brute force CGI:
 root@kali:~# gobuster -u http://10.11.1.71/ \ -w /usr/share/seclists/Discovery/Web_Content/cgis.txt \ -s '200,204,301,302,307,403,500' -e  
+
+nmap vuln scripts
