@@ -1,3 +1,4 @@
+Basic enumeration exact syntax I forget:
 netdiscover -r 10.11.1.0/24
 
 Brute force domain names:
