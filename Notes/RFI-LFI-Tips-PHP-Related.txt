@@ -1,6 +1,6 @@
 RFI/LFI
 <?php 
-echo shell_exec(“ls -la“);
+echo shell_exec(â€œls -laâ€œ);
 ?>  
 
 //Back ticks
@@ -17,7 +17,7 @@ echo exec("ls -la");
 
 
 <?php
-passsthru(“ls -la“);
+passsthru(â€œls -laâ€œ);
 ?>
 
 <?php
