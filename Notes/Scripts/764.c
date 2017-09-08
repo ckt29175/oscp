@@ -5,7 +5,8 @@
  * Compile with: gcc -o OpenFuck OpenFuck.c -lcrypto
  * objdump -R /usr/sbin/httpd|grep free to get more targets
  * #hackarena irc.brasnet.org
- * edited by: OS-29175
+ * edited by: living2ct 
+ * this is working
  * Using guide: http://paulsec.github.io/blog/2014/04/14/updating-openfuck-exploit/
  */
 
