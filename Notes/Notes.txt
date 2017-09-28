@@ -27,14 +27,23 @@ us -mT -Iv ip:a -r 3000 -R 3 && us -mU -Iv ip:a -r 3000 -R 3
 nmap -A -v -p- $ip
 ----------------------------------------------------------
 Port 445 SMB:
-- enum4linux
+- enum4linux -A
 - nmap scripts
 
 How to SMBclient:
 /usr/bin/smbclient \\\\zimmerman\\public mypasswd
 ------------------------------------------------------------
 Port 80/443 HTTP/HTTPS:
-Brute Forcing:
+Brute Forcing Directories:
 dirb
 gobuster: gobuster -u http://10.11.1.71/  -w /usr/share/seclists/Discovery/Web_Content/common.txt  -s '200,204,301,302,307,403,500' -e 
 CGI Brute force: /usr/share/seclists/Discovery/Web_Content/cgis.txt
+
+burp suite...
+nikto
+nmap http scripts
+------------------------------------------------------------
+Port 161 SNMP:
+onesixtyone
+snmpwalk
+
