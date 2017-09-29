@@ -64,3 +64,26 @@ Port 3306/1433 MySQL/MS-SQL
 - MS SQL login check for XP_CMDSHELL:
 EXEC xp_cmdshell 'dir';  
 GO  
+
+--------------------------------------------------------------
+*******************New page********************************
+----------------------------------------------------------------
+PHP Obtaining Shell: https://github.com/ckt29175/oscp/blob/master/Notes/Getting-Shell-Related.txt
+----------------------------------------------------------------
+Directory transversele for windows (spaces):
+ls ../../../Docume~1/
+If want to directory transverse to: "Documents and Settings"
+----------------------------------------------------------------
+Compiling exploits:
+https://github.com/ckt29175/oscp/blob/master/Notes/Compile.txt
+If editting public exploits:
+Try to use the same payload
+Make sure size of payload is equal or LESS than the size of payload in exploit
+If less, add NOPS "\x90"
+----------------------------------------------------------------
+Hydra Brute Forcing:
+hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
+----------------------------------------------------------------
+process.h, string.h, winbase.h, windows.h, winsock2.h - Windows exploit code
+arpa/inet.h, fcntl.h, netdb.h, netinet/in.h, sys/sockt.h, sys/types.h, unistd.h - Linux exploit code
+-----------------------------------------------------------------
