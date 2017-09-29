@@ -26,10 +26,12 @@ us -mT -Iv ip:a -r 3000 -R 3 && us -mU -Iv ip:a -r 3000 -R 3
 2nd port scan intensive:
 nmap -A -v -p- $ip
 ----------------------------------------------------------
-Port 445 SMB:
+Port 445/139 SMB/Netbios:
 - enum4linux -A
 - nmap scripts
-
+- rpcclient: rpcclient -U rob 10.11.0.1
+enumdomusers
+- nbtscan: nbtscan -r
 How to SMBclient:
 /usr/bin/smbclient \\\\zimmerman\\public mypasswd
 ------------------------------------------------------------
@@ -46,4 +48,19 @@ nmap http scripts
 Port 161 SNMP:
 onesixtyone
 snmpwalk
-
+-----------------------------------------------------------
+Port 21 FTP:
+- Check for misconfigurations (anonymous login)
+- Nmap NTLM sript
+After anonymous login maybe directory transversle
+-----------------------------------------------------------
+Port 23 Telnet:
+- Check for misconfigurations
+nmap NTLM script
+------------------------------------------------------------
+Port 3306/1433 MySQL/MS-SQL 
+- MS SQL Use SQSH
+- MySQL/MS SQL Check for anonymous
+- MS SQL login check for XP_CMDSHELL:
+EXEC xp_cmdshell 'dir';  
+GO  
