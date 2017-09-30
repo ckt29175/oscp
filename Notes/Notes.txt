@@ -139,8 +139,23 @@ Directory transversele for windows (spaces):
 ls ../../../Docume~1/
 If want to directory transverse to: "Documents and Settings"
 ----------------------------------------------------------------
-Compiling exploits:
-https://github.com/ckt29175/oscp/blob/master/Notes/Compile.txt
+Public exploits:
+python standalone
+python pyinstaller.py --onefile ms11-080.py  
+
+GCC standalone
+gcc -m32 -Wl,--hash-style=both -o exploit 18411.c 
+Standalone GCC compiler (If machine does not have GCC)
+chmod (file) 	- 	change file perms to be able to execute
+
+
+Mingw:
+ i686-w64-mingw32- gcc(g++) exploit.c -o exploit -lws2_32
+
+in case mingw32 does not support the code such as "__try" , compile in a windows vm:
+Visual Studio Developer Command Line  (Developer Command Prompt for VS )
+cl ex.cpp /link kernel32.lib shell32.lib user32.lib 
+
 If editting public exploits:
 Try to use the same payload
 Make sure size of payload is equal or LESS than the size of payload in exploit
