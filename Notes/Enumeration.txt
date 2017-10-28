@@ -15,7 +15,6 @@ Brute force web directory:
 root@kali:~# gobuster -u http://10.11.1.71/ \ -w /usr/share/seclists/Discovery/Web_Content/common.txt \ -s '200,204,301,302,307,403,500' -e  
 
 Extentions brute force
-gobuster -u http://url -w /usr/share/seclists/Discovery/Web_Content/common.txt -x /usr/share/wordlists/dirb/extensions_common.txt -s'200,204,301,302,307,403,500' -e  
 
 dirb http://ip -x /usr/share/wordlists/dirb/extensions_common.txt
 
