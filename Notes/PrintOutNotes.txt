@@ -1,5 +1,5 @@
 CPTC Notes:
-
+(General whole github notes)
 ------------------------------------------------------
 Configurations:
   Metasploit.rc
