@@ -1,5 +1,5 @@
 #load auto_add_route - I commend this out because there is a bug i found with using auto add route plugin. It has something to do with
-#tlv negotiation handshake and does not give a shell.
+#tlv negotiation handshake and does not give a shell. Now routing must be done manually for basic pivioting
 
 load alias
 
