@@ -1,4 +1,5 @@
-load auto_add_route
+#load auto_add_route - I commend this out because there is a bug i found with using auto add route plugin. It has something to do with
+#tlv negotiation handshake and does not give a shell.
 
 load alias
 
