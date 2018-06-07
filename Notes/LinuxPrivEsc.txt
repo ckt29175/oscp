@@ -1,1 +1,4 @@
 https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ - All there is to say
+
+a user can run a file in sudo?
+spawn tty and run 'sudo -S ./script.sh'
