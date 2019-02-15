@@ -23,7 +23,7 @@ root@kali:~# gobuster -u http://10.11.1.71/  -w /usr/share/seclists/Discovery/We
 
 nmap vuln scripts
 
-wfuzz
+wfuzz (IE Fuzz users)
 
 
 Finding scope:
