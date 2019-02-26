@@ -1,0 +1,24 @@
+whois domain
+
+Brute force domain names:
+for ip in $(seq 0 255); do host 192.168.1.$ip; done
+root@kali:~# for ip in $(seq 0 255); do host 10.11.1.$ip 10.11.1.220 |grep "domain name pointer" ; done 
+
+brute force sub domains:
+for ip in $(cat list.txt);do host $ip.$DOMAIN.com;done
+
+nslookup:
+setup
+
+SERVER $IP
+
+commands
+> 127.0.0.1
+> $DOMAIN
+> $IP
+
+DNS zone transfer:
+dig axfr @ip
+dig axfr DOMAIND @ip
+
+dnsrecon -d domain -t axfr
