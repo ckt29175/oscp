@@ -1,3 +1,5 @@
+Enumerating DNS:
+
 whois domain
 
 Brute force domain names:
