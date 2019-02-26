@@ -1,4 +1,4 @@
-Basic enumeration syntax:
+Basic enumeration stuff to remember:
 netdiscover -r 10.11.1.0/24
 
 Port scanning:
